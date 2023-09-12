@@ -3,163 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulário de contrato</title>
-
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Saira:wght@400;500&display=swap");
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        background: rgb(2, 0, 36);
-        background: linear-gradient(
-          90deg,
-          rgba(2, 0, 36, 1) 0%,
-          rgba(9, 9, 121, 1) 35%,
-          rgba(0, 212, 255, 1) 100%
-        );
-        font-family: "Saira", sans-serif;
-        color: #f5f5f5;
-        display: flex;
-        align-items: center;
-        height: 100vh;
-      }
-
-      #container {
-        width: 55%;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 25px;
-        background-color: rgba(255, 255, 255, 0.2);
-        padding: 50px;
-        border-radius: 6px;
-      }
-
-      h1,
-      label {
-        text-shadow: 1px 1px 1px black;
-        font-weight: 400;
-      }
-
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      label {
-        font-size: 1.6rem;
-        margin-top: 5px;
-      }
-
-      input[type="text"]:valid,
-      input[type="email"]:valid,
-      textarea:valid {
-        border-bottom: 3px solid #23b46b;
-      }
-
-      input[type="text"]:focus:invalid,
-      input[type="email"]:focus:invalid,
-      textarea:focus:invalid {
-        border-bottom: 3px solid #b42325;
-      }
-
-      .contact-form,
-      textarea {
-        border-radius: 3px 3px 0 0;
-        border: none;
-        background-color: rgba(255, 255, 255, 0.4);
-        color: #000000;
-        border-bottom: 3px solid #f5f5f5;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 1.4rem;
-      }
-
-      input,
-      textarea:focus {
-        outline: none;
-      }
-
-      .contact-form {
-        height: 45px;
-        padding: 5px 5px 5px 10px;
-      }
-
-      textarea {
-        resize: none;
-        font-size: 1.4rem;
-        padding: 10px;
-      }
-
-      .contact-form::placeholder,
-      textarea::placeholder {
-        color: #515151;
-      }
-
-      form {
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .btn {
-        margin-top: 40px;
-        width: 20%;
-        height: 55px;
-        color: inherit;
-        font-size: 1.3rem;
-        background-color: rgba(255, 255, 255, 0.5);
-        color: inherit;
-        border: none;
-        border-radius: 3px;
-        text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.9);
-        display: flex;
-        align-self: flex-start;
-        justify-content: center;
-        cursor: pointer;
-        transition: transform 0.5s;
-        box-shadow: 0.7px 0.7px 4px rgba(0, 0, 0, 0.9);
-      }
-
-      .btn:hover {
-        transform: translateY(-3px);
-        background-color: rgba(255, 255, 255, 0.4);
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
+    <title>Formulário de contato</title>
   </head>
   <body>
     <main id="container">
-      <h1>Formulário de contrato</h1>
+      <h1>Formulário de contato</h1>
 
       <form>
-        <label>Seu nome</label>
+        <label for="name">Seu nome</label>
         <input
           class="contact-form"
           type="text"
           required
           minlength="4"
           placeholder="Mínimo 4 caracteres"
+          id="name"
         />
 
-        <label>Email</label>
-        <input class="contact-form" type="email" required />
+        <label for="email">Email</label>
+        <input class="contact-form" type="email" required id="email" />
 
-        <label>Assunto</label>
-        <input class="contact-form" type="text" required />
+        <label for="subject">Assunto</label>
+        <input class="contact-form" type="text" required id="subject" />
 
-        <label>Mensagem</label>
+        <label for="message">Mensagem</label>
         <textarea
           cols="30"
           rows="7"
           required
           minlength="20"
           placeholder="Mínimo 20 caracteres"
+          id="message"
         ></textarea>
 
         <input class="btn" type="submit" value="Enviar" />
